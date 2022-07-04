@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+          body{
+            background-image: url("../static/agri.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 150%;
+            background-position: center;
+     
+          }
+/*
+          label::after{
+              content: ": ";
+          }
+          label{
+              color: black;
+              font-weight: bold;
+              display: inline-block;
+              width: 140px;
+              text-align: right;
+          }
+          a:link, a:visited{
+              background-color: #f44336;
+              padding: 15px 25px;
+              color: white;
+              text-align: center;
+              display: inline-block;
+          }
+          a:hover, a:active{
+              background-color: red;
+          }
+          */
+          .form-style-7{
+                max-width:400px;
+                margin:50px auto;
+                background:#fff;
+                border-radius:2px;
+                padding:20px;
+                font-family: Georgia, "Times New Roman", Times, serif;
+            }
+           .form-style-7 h1{
+                display: block;
+                text-align: center;
+                padding: 0;
+                margin: 0px 0px 20px 0px;
+                color: #5C5C5C;
+                font-size:x-large;
+            }
+            .form-style-7 ul{
+                list-style:none;
+                padding:0;
+                margin:0;	
+            }
+            .form-style-7 li{
+                display: block;
+                padding: 9px;
+                border:1px solid #DDDDDD;
+                margin-bottom: 30px;
+                border-radius: 3px;
+            }
+            .form-style-7 li:last-child{
+                border:none;
+                margin-bottom: 0px;
+                text-align: center;
+            }
+            .form-style-7 li > label{
+                display: block;
+                float: left;
+                margin-top: -19px;
+                background: #FFFFFF;
+                height: 14px;
+                padding: 2px 5px 2px 5px;
+                color: #B9B9B9;
+                font-size: 14px;
+                overflow: hidden;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .form-style-7 input[type="district"],
+            .form-style-7 input[type="season"],
+            .form-style-7 input[type="crop"],
+            .form-style-7 input[type="soil"],
+            .form-style-7 input[type="area"],
+            .form-style-7 textarea,
+            .form-style-7 select 
+            {
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                width: 100%;
+                display: block;
+                outline: none;
+                border: none;
+                height: 25px;
+                line-height: 25px;
+                font-size: 16px;
+                padding: 0;
+                font-family: Georgia, "Times New Roman", Times, serif;
+            }
+            .form-style-7 input[type="district"]:focus,
+            .form-style-7 input[type="season"]:focus,
+            .form-style-7 input[type="crop"]:focus,
+            .form-style-7 input[type="soil"]:focus,
+            .form-style-7 input[type="area"]:focus,
+            .form-style-7 textarea:focus,
+            .form-style-7 select:focus
+          
+                    
+            .form-style-7 li > span{
+                background: #F3F3F3;
+                display: block;
+                padding: 3px;
+                margin: 0 -9px -9px -9px;
+                text-align: center;
+                color: #C0C0C0;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 11px;
+            }
+            .form-style-7 textarea{
+                resize:none;
+            }
+            .form-style-7 input[type="submit"]{
+                background: #2471FF;
+                border: none;
+                padding: 10px 20px 10px 20px;
+                border-bottom: 3px solid #5994FF;
+                border-radius: 3px;
+                color: #D2E2FF;
+            }
+            .form-style-7 input[type="submit"]:hover
+            {
+                background: #6B9FFF;
+                color:#fff;
+            }
+           
+      </style>
+      <script >
+    
+        function adjust_textarea(h) {
+            h.style.height = "20px";
+            h.style.height = (h.scrollHeight)+"px";
+        }
+        </script>
+
+      <body background="{{ url_for('static', filename='agri.jpg')}}">
+            <div class="login" align="center">
+                   <b><h1>Crop Yield Prediction</h1></b>
+                   <form action="{{ url_for('production')}}" method="post" class="form-style-7">
+                   <ul>
+                   <li>      
+                        <b><label for="District">District</label></b>
+                        <input type="district">
+                        <select name="District" id="district">
+                            <option value='AHMEDNAGAR'>AHMEDNAGAR</option>
+                            <option value='AKOLA'>AKOLA</option>
+                            <option value='AMRAVATI'>AMRAVATI</option>
+                            <option value='AURANGABAD'>AURANGABAD</option>
+                            <option value='BEED'>BEED</option>
+                            <option value='BHANDARA'>BHANDARA</option>
+                            <option value='BULDHANA'>BULDHANA</option>
+                            <option value='CHANDRAPUR'>CHANDRAPUR</option>
+                            <option value='DHULE'>DHULE</option>
+                            <option value='GADCHIROLI'>GADCHIROLI</option>
+                            <option value='GONDIA'>GONDIA</option>
+                            <option value='HINGOLI'>HINGOLI</option>
+                            <option value='JALGAON'>JALGAON</option>
+                            <option value='JALNA'>JALNA</option>
+                            <option value='KOLHAPUR'>KOLHAPUR</option>
+                            <option value='LATUR'>LATUR</option>
+                            <option value='NAGPUR'>NAGPUR</option>
+                            <option value='NANDED'>NANDED</option>
+                            <option value='NASHIK'>NASHIK</option>
+                            <option value='OSMANABAD'>OSMANABAD</option>
+                            <option value='PARBHANI'>PARBHANI</option>
+                            <option value='PUNE'>PUNE</option>
+                            <option value='SANGLI'>SANGLI</option>
+                            <option value='SATARA'>SATARA</option>
+                            <option value='THANE'>THANE</option>
+                            <option value='WARDHA'>WARDHA</option>
+                            <option value='WASHIM'>WASHIM</option>
+                            <option value='YAVATMAL'>YAVATMAL</option>
+                            </select>
+                    </li>
+                    <li>             
+                        <b><label for="Season">Season</label></b>
+                        <input type="season" >
+                        <select name="Season" id="season">
+                                <option value="Kharif     ">Kharif</option>
+                                <option value="Whole Year ">Whole Year</option>
+                                <option value="Autumn     ">Autumn</option>
+                                <option value="Rabi       ">Rabi</option>
+                                <option value="Summer     ">Summer</option>
+                                <option value="Winter     ">Winter</option>
+                                </select>
+                    </li>
+                    <li>   
+                        <b><label for="Crop">Crop</label></b> 
+                        <input type="crop" > 
+                        <select name="Crop" id="Crop">
+                            <option value='Maize'>Maize</option>
+                            <option value='Arhar/Tur'>Arhar/Tur</option>
+                            <option value='Bajra'>Bajra</option>
+                            <option value='Gram'>Gram</option>
+                            <option value='Jowar'>Jowar</option>
+                            <option value='Moong(Green Gram)'>Moong(Green Gram)</option>
+                            <option value='Pulses total'>Pulses total</option>
+                            <option value='Ragi'>Ragi</option>
+                            <option value='Rice'>Rice</option>
+                            <option value='Sugarcane'>Sugarcane</option>
+                            <option value='Total foodgrain'>Total foodgrain</option>
+                            <option value='Urad'>Urad</option>
+                            <option value='Other  Rabi pulses'>Other  Rabi pulses</option>
+                            <option value='Wheat'>Wheat</option>
+                            <option value='Cotton(lint)'>Cotton(lint)</option>
+                            <option value='Castor seed'>Castor seed</option>
+                            <option value='Groundnut'>Groundnut</option>
+                            <option value='Niger seed'>Niger seed</option>
+                            <option value='Other Cereals & Millets'>Other Cereals & Millets</option>
+                            <option value='Other Kharif pulses'>Other Kharif pulses</option>
+                            <option value='Sesamum'>Sesamum</option>
+                            <option value='Soyabean'>Soyabean</option>
+                            <option value='Sunflower'>Sunflower</option>
+                            <option value='Linseed'>Linseed</option>
+                            <option value='Safflower'>Safflower</option>
+                            <option value='Small millets'>Small millets</option>
+                            <option value='Rapeseed &Mustard'>Rapeseed &Mustard</option>
+                            <option value='other oilseeds'>other oilseeds</option>
+                            <option value='Banana'>Banana</option>
+                            <option value='Grapes'>Grapes</option>
+                            <option value='Mango'>Mango</option>
+                            <option value='Onion'>Onion</option>
+                            <option value='Tomato'>Tomato</option>
+                            <option value='Tobacco'>Tobacco</option> 
+                            </select>
+                    </li>
+                    <li>
+                        <b><label for="Soil">Soil</label></b>
+                        <input type="soil">
+                        <select name="Soil" id="soil">
+                            <option value="Sandy">Sandy</option>
+                            <option value="Loamy">Loamy</option>
+                            <option value="Silty">Silty</option>
+                            <option value="Clay">Clay</option>
+                        </select>
+                    </li>
+                    <li>         
+                        <b><label for="Area">Area</label></b>
+                        <input type="area" >
+                        <input type="text" name="Area" placeholder="" required="required" /><br><br>
+                        <span>Enter Area in hectares</span>
+                    </li>    
+                    <li>
+                        <button type="submit" class="btn btn-success">Predict</button> 
+                    </li>
+                    </ul>    
+                    </form>
+                <br>
+                
+                    <b><font style="color: rgb(254, 253, 253)" "font-family:verdana" size="6">{{prediction_text}}</font></b>
+
+            </div>
+            </html>
+
+
+  
+

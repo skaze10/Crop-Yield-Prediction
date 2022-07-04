@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+  <style>
+
+   body {
+    background-image: url("../static/agri.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 150%;
+    background-position: center;
+    background-size: cover;
+      
+
+}
+
+</style>
+
+</head>
+
+<body background="{{ url_for('static', filename='agri.png') }}">
+
+<div class="login" align="center"> 
+    <b><font style="color: black" "font-family:verdana" size="5"><h1>LOGIN</h1></font></b>
+
+    <form action="{{ url_for('logedin')}}" method="post">
+
+    <input type="text" name="user_id" placeholder="user_id" required="required" /><br><br><br> 
+    <input type="password" value="FakePSW" id="myInput" name="password" placeholder="password" required="required" /><br><br><br>
+
+    <button type="submit" class="btn btn-primary btn-block btn-large" >Login</button><br><br><br>
+
+    </form>
+
+    <b><font style="color:black" "font-family:verdana" size="5">{{text}}</font></b><br><br>
+
+</div>
+<br>
+<br>
+<br>    
+</body>
+</html>
